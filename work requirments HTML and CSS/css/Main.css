@@ -1,0 +1,160 @@
+/*body og container er kopiert fra index.*/
+body {
+  margin: 0; 
+  padding: 0; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+  background-color: black; 
+}
+.container {
+  height: 768px;
+  width: 1024px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.h1 {
+  position: absolute;
+  height: 80%;
+  font-style: italic;
+}
+@keyframes spin { /*Denne animasjonen ble litt "janky" men elsket det så beholdt det.*/
+    0% {
+        transform: translate(0);
+    }
+    50% {
+        transform:  rotate(360deg);
+    }
+}
+
+.Lykke2 {  
+    width: 50%;
+    height: auto;
+    position: absolute;
+    animation-name: spin;
+    animation-duration: 1.5s;
+}
+
+/*keyframes som animerer inn en liten dans ved hover. (dance1 og dance2)*/
+@keyframes dance1 {
+  0% {
+    left: 20%;
+    top: 80%;
+  }
+  10% {
+    top: 70%;
+  }
+  20% {
+    left: 24%;
+  }
+  30% {
+    top: 80%;
+  }
+  40% {
+    left: 18%;
+  }
+  50% {
+    top: 70%;
+  }
+  60% {
+    left: 24%;
+  }
+  70% {
+    top: 80%;
+  }
+  80% {
+    left: 18%;
+  }
+  90% {
+    top: 70%;
+  }
+  100% {
+    left: 20%;
+    top: 80%;
+  }
+
+}
+
+@keyframes dance2 {
+  0% {
+    left: 88%;
+    top: 68%;
+  }
+  10% {
+    top: 60%;
+  }
+  20% {
+    left: 90%;
+    top: 68%;
+  }
+  30% {
+    top: 60%;
+  }
+  40% {
+    left: 85%;
+    top: 68%;
+  }
+  50% {
+    top: 60%;
+  }
+  60% {
+    left: 90%;
+    top: 68%;
+  }
+  70% {
+    top: 60%;
+  }
+  80% {
+    left: 85%;
+    top: 68%;
+  }
+  90% {
+    top: 60%;
+  }
+  100% {
+    left: 88%;
+    top: 68%;
+  }
+
+}
+
+/*Setter felles verdier til di 2 bildene jeg vil jobbe med*/
+.Lykke3 {
+  width: 280px;
+  position: absolute; 
+  transform: translate(-50%, -50%);
+  transition-property: all;
+  transition-duration: 1s;
+
+}
+
+  .PartyLykke:hover {
+    width: 380px; /*gjør bilde større under hover*/
+    animation-name: dance1; 
+    animation-iteration-count: infinite; /*får dem til å loope evig under hover*/
+    animation-duration: 3s; /*definerer hvor fort animasjonen skal gå*/
+    animation-timing-function: ease-in-out; /*starter sakte, avslutter sakte*/
+  }
+
+  .PartyLykke {
+    top: 80%;
+    left: 20%;
+  }
+  
+  .DinoLykke:hover {
+    width: 380px;
+    animation-name: dance2;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+  }
+
+  .DinoLykke {
+    top: 68%;
+    left: 88%;
+  }

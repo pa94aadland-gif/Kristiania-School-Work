@@ -1,0 +1,114 @@
+body {
+  margin: 0; 
+  padding: 0; 
+  display: flex; /*gir felles verdi flexbox for å lettere kunne flytte rundt på ting*/
+  justify-content: center; /*sentrerer så alt i body med diss 2 flexbox innrykkene.*/
+  align-items: center; 
+  height: 100vh; /*setter "veiw heigh" til 100 slik at container skal være på midten av nettleseren*/
+  background-color: black; /*så alt utenfor 1024x768 containeren er svart*/
+}
+
+/*Her henter jeg konteineren jeg skal jobbe i fra. Setter høydeog bakgrunns farge*/
+.container {
+  height: 768px;
+  width: 1024px;
+  position: relative;
+  background-color: turquoise;
+}
+
+.balloonpng {
+    width: 100%;
+    top: 0%;
+}
+
+/*Her henter jeg h1 klassen og gir den
+verdier i css.*/
+.h1birthday {
+    font-style: italic;
+    font-size: 60px;
+    position: absolute;
+    left: 25%;
+    }
+    
+/*Denne keyframen eg skrevet av KI.
+Her animerer jeg ett lite "hopp" til klassen min: 
+questionmark.*/
+@keyframes bounce {
+    0% {
+        transform: translate(0,0);
+    }
+    25% {
+        transform: translate(10%, -10%);
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    75% {
+        transform: translate(-10%, -10%);
+    }
+    100% {
+        transform: translate(0, 0)
+    }
+}
+    
+/*Her henter jeg inn hoved klassen til divtaggen,
+og legger in at jeg vil at den skal være en flexbox.
+i tilegg så legger jeg til en animasjon*/
+.questionmark {
+    font-size: 250px; /*Setter størrelsen på "?"*/
+    position: absolute; /*Bruker absolute for å positionere*/
+    animation-name: bounce; /*lager en animation-name for å lage en keyframe til*/
+    animation-duration: 1.5s; /*setter hvor rask animasjonen skal være*/
+    animation-iteration-count: infinite; /*Får det til å loope evig*/
+    animation-timing-function: ease-in-out; /*gjør at den starter sakte, og ender sakte*/
+    }
+    /*Henter så inn spørsmåltegnene for å plassere dem rundt i forhold til containeren*/
+    .questionmark1 {
+        top: 60%; 
+        left: 85%;
+    }
+    .questionmark2 {
+        top: 60%;
+        left: 5%;
+    }
+    .questionmark3 {
+        top: 5%;
+        left: 85%;
+    }
+    .questionmark4 {
+        top: 5%;
+        left: 5%;
+    }
+
+ .Lykke1 {
+      /*Henter inn bildet og skalerer det.*/
+        width: 300px;
+        height: auto; /*auto gjør at bilde automatisk skalerer høyde for å unngå at bilde blir forsrekt*/
+
+        /*Her plasserer jeg bilde der jeg vil ha det,
+        og setter midtpungetet til bilde på midten av bilde
+        ved hjelp av transform*/
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        /*Gjør så bildet rundt gir det verdier til animasjon.*/
+        border-radius: 50%; /*runder av kantene til bildet*/
+        transition-property: all; /*setter at alt inni dette bildet skal ha samme overgangs effekt*/
+        transition-duration: 1s; /*setter hastigheten fra du tar musepekeren over, til den er ferdig med animasjonen*/
+        opacity: 20%; /*bilde blir litt sjult, men ikke for skjult*/
+    }
+         .main {
+        font-style: italic;
+        text-align: center;
+        font-size: 35px;
+        opacity: 100%;
+    }
+    
+    .Lykke1:hover {
+        /*Her gjør jeg bilde større og 100% tydelig under hover*/
+        width: 400px;
+        opacity: 100%;
+    }
+
