@@ -1,0 +1,161 @@
+/*This adds inn the font we are using for our websites*/
+@font-face {
+    font-family: TitanOne;
+    src: url(TitanOne-Regular.ttf)format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*removes any borders from the website*/
+body {
+    box-sizing: border-box;
+    padding: 0; 
+    margin: 0;
+}
+
+/*The headline, with what you're supposed to do*/
+h1 { 
+    font-family: "TitanOne";
+    font-size: 250%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+/*info text for how to guide Gorilla-bot*/
+p {
+    font-family: "TitanOne";
+    color: #ffffff;
+    border-color: rgb(0, 0, 0);
+    font-size: 100%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 91%;
+}
+
+/*This is a container to keep all elements within the website*/
+.container {
+    border: none;
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/*The background is made to stretch to the scale of the screen*/
+.background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    object-fit: fill; 
+    position: absolute; 
+    z-index: -1; 
+}
+
+/*Gorilla-bot the legends himself*/
+.gorilla-bot {
+    width: 400px;
+    position: absolute;
+    top: 70%;
+    z-index: 1;
+}
+
+    /*hover effect, to make him interactable*/
+    .gorilla-bot:hover {
+        animation-name: walk;
+        animation-duration: 6s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+    }
+
+    /*animation to walk and jump towards the banana*/
+    @keyframes walk {
+        0% {
+            left: 0%;
+            top: 70%;
+        }
+        60% {
+            left: 65%;
+            top: 70%;
+        }
+        65% {
+            left: 65%;
+            top: 70%;
+        }
+        85% {
+            left: 65%;
+            top: 20%;
+        }
+        100%
+        {
+            left: 65%;
+            top: 70%;
+        }
+    }
+
+/*Gorilla-bots dinner*/
+.banana {
+    height: 130px;
+    position: absolute;
+    left: 73%;
+    top: 23%;
+    opacity: 1;
+    }
+
+    /*This code is written by AI*/
+    /*This makes the animation start when you hover gorilla-bot,
+    there is a delay so it's timed as if gorilla-bot takes the banana*/
+    .gorilla-bot:hover ~ .banana {
+    animation-name: banana-disappear;
+    animation-duration: 7.5s;
+    animation-fill-mode: forwards;
+}
+
+    /*The animation for the banana to disappear*/
+    @keyframes banana-disappear {
+    0%, 60% {
+        opacity: 1;
+    }
+    70%, 100% {
+        opacity: 0;
+    }
+}
+
+/*The monkey, the myth the legend,
+pops up at the middle of the screen towards the end*/
+.happy-gorilla-bot {
+    width: 600px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 50%;
+    opacity: 0;
+}
+
+    /*This code is written by AI*/
+    /*This makes the animation start when you hover gorilla-bot,
+    there is a delay, so happy-gorilla only pops up when the banana has been recoverd*/
+    .gorilla-bot:hover ~ .happy-gorilla-bot {
+    animation-name: happy-appear;
+    animation-duration: 7s;
+    animation-fill-mode: forwards;
+}
+
+    /*The animation for happy-gorilla to appear on screen*/
+    @keyframes happy-appear {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
